@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CyberSafe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- header -->
+    <header>
+        <h1>CyberSafe</h1>
+        <nav>
+            <a onclick="showPage('home')">Home</a>
+            <a onclick="showPage('learn')">Learn</a>
+            <a onclick="showPage('password')">Password</a>
+            <a onclick="showPage('quiz')">Quiz</a>
+            <a onclick="showPage('report')">Report</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- home page -->
+        <div id="home" class="page show">
+            <div class="hero">
+                <h2>Stay Safe Online</h2>
+                <p>Learn how to protect yourself from hackers and online fraud.</p>
+                <button onclick="showPage('learn')">Start Learning</button>
+            </div>
+
+            <div class="row">
+                <div class="box">
+                    <h3>Phishing</h3>
+                    <p>Spot fake emails and messages.</p>
+                </div>
+                <div class="box">
+                    <h3>Passwords</h3>
+                    <p>Make strong passwords.</p>
+                </div>
+                <div class="box">
+                    <h3>Social Engineering</h3>
+                    <p>Do not get tricked by people.</p>
+                </div>
+                <div class="box">
+                    <h3>Safe Browsing</h3>
+                    <p>Use the internet safely.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- learn page -->
+        <div id="learn" class="page">
+            <h2>Learn</h2>
+            <button onclick="showLesson(0)">Phishing</button>
+            <button onclick="showLesson(1)">Passwords</button>
+            <button onclick="showLesson(2)">Social Engineering</button>
+            <button onclick="showLesson(3)">Safe Browsing</button>
+
+            <div id="lesson0" class="lesson box show">
+                <h3>Phishing</h3>
+                <p>Phishing is when a hacker sends a fake email or message to steal your password, OTP or bank details.</p>
+                <p>How to find a phishing message:</p>
+                <ul>
+                    <li>It says "urgent" or "your account will be blocked"</li>
+                    <li>The sender email looks strange</li>
+                    <li>It has spelling mistakes</li>
+                    <li>It asks for your OTP or password</li>
+                </ul>
+                <p class="tip">Never click unknown links. Open the official website yourself.</p>
+            </div>
+
+            <div id="lesson1" class="lesson box">
+                <h3>Passwords</h3>
+                <p>A weak password can be guessed very fast by hackers.</p>
+                <ul>
+                    <li>Use at least 8 characters</li>
+                    <li>Use capital letters, numbers and symbols</li>
+                    <li>Do not use your name or birthday</li>
+                    <li>Do not use the same password everywhere</li>
+                </ul>
+                <p class="tip">Never share your password with anyone.</p>
+            </div>
+
+            <div id="lesson2" class="lesson box">
+                <h3>Social Engineering</h3>
+                <p>Here the hacker tricks a person instead of a computer.</p>
+                <ul>
+                    <li>Pretending to be from the bank or IT department</li>
+                    <li>Fake lottery or prize calls</li>
+                    <li>Leaving an infected pendrive on the ground</li>
+                </ul>
+                <p class="tip">Always verify who is asking before giving any information.</p>
+            </div>
+
+            <div id="lesson3" class="lesson box">
+                <h3>Safe Browsing</h3>
+                <p>The internet has many fake websites and viruses.</p>
+                <ul>
+                    <li>Check for https in the website address</li>
+                    <li>Download software only from official sites</li>
+                    <li>Do not do banking on public Wi-Fi</li>
+                    <li>Keep your antivirus updated</li>
+                </ul>
+                <p class="tip">If you get cheated online, call 1930 or visit cybercrime.gov.in</p>
+            </div>
+        </div>
+
+        <!-- password page -->
+        <div id="password" class="page">
+            <h2>Password Checker</h2>
+            <div class="box">
+                <p>Type a password to check how strong it is.</p>
+                <input type="text" id="pw" onkeyup="checkPassword()" placeholder="Enter password">
+                <div class="bar"><div id="fill"></div></div>
+                <p id="strength">Strength: -</p>
+                <p>A strong password has 8+ characters, a capital letter, a number and a symbol.</p>
+            </div>
+        </div>
+
+        <!-- quiz page -->
+        <div id="quiz" class="page">
+            <h2>Quiz</h2>
+            <div id="quiz-box" class="box"></div>
+        </div>
+
+        <!-- report page -->
+        <div id="report" class="page">
+            <h2>Report a Problem</h2>
+            <div class="box">
+                <p>Name</p>
+                <input type="text" id="name">
+                <p>Email</p>
+                <input type="text" id="email">
+                <p>What happened?</p>
+                <textarea id="details" rows="4"></textarea>
+                <br><br>
+                <button onclick="submitReport()">Submit</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>CyberSafe - Mini Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
